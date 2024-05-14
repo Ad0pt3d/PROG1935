@@ -2,5 +2,5 @@ function addTwoNumbers() {
     var number1 = Number(prompt("Enter the first number"));
     var number2 = Number(prompt("Enter the second number"));
     var result = number1 + number2;
-    document.write("".concat(number1, " + ").concat(number2, " = ").concat(result));
+    document.write(`${number1} + ${number2} = ${result}`);
 }
