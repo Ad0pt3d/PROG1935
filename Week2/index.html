@@ -16,11 +16,20 @@
                             <td id="pricePerItem">$5</td>
                             <td id="product1Quantity"></td>
                             <td>
-                                <button type="button" class="btn btn-primary btn-sm" onclick="addToCart('Product 1', 5, 'product1Quantity');">Add to Cart</button>
+                                <button id="product1CartButton" type="button" class="btn btn-primary btn-sm" onclick="addToCart('Product 1', 5, 'product1Quantity', 'product1CartButton');">Add to Cart</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="productName">Product 2</td>
+                            <td id="pricePerItem">$7</td>
+                            <td id="product2Quantity"></td>
+                            <td>
+                                <button id="product2CartButton" type="button" class="btn btn-primary btn-sm" onclick="addToCart('Product 2', 7, 'product2Quantity', 'product2CartButton');">Add to Cart</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+                <button hidden id="checkout" type="button" class="btn btn-success btn-sm" onclick="checkout();">Checkout</button>
             </div>
             <div class="col">
                 <h3>Reciept</h3>
