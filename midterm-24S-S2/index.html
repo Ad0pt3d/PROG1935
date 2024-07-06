@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+    <title>MidTerm - Rafi Miah | 8981738</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>MidTerm - StudentName | StudentNumber</h1>
+        <div class="row">
+            <div class="col">
+                <form method="post" onsubmit="return validateForm()">
+                    <div class="mb-3">
+                        <label class="form-label" for="customerName">Customer Name*</label>
+                        <input class="form-control" type="text" name="customerName" id="customerName" placeholder="Full Name"/>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="customerNumber">Customer Number*</label>
+                        <input class="form-control" type="text" name="customerNumber" id="customerNumber" placeholder="54321BA" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="customerEmail">Customer Email*</label>
+                        <input class="form-control" type="text" name="customerEmail" id="customerEmail" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="costOfClothings">Total Cost Of Clothings*</label>
+                        <input class="form-control" type="text" name="costOfClothings" id="costOfClothings" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="costOfAccessories">Total Cost Of Accessories</label>
+                        <input class="form-control" type="text" name="costOfAccessories" id="costOfAccessories" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="rewardsRecieved">Rewards Recieved*</label>
+                        <input class="form-control" type="text" name="rewardsRecieved" id="rewardsRecieved" />
+                    </div>
+
+                    <input class="btn btn-primary" type="submit" value="Calculate" />
+                    <input class="btn btn-secondary" type="reset" value="Clear" />
+                </form>
+            </div>
+
+            <div class="col">
+                <div id="errors"></div>
+                <div id="output"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
