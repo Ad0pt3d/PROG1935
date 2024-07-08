@@ -1,17 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-const { getHome, getProfile, } = require("../controllers/appController");
+const { getAddOrder, postAddOrder } = require("../controllers/orderController");
 
 // Define routes
 router
-    .get('/', getHome)
-    .get('/profile', getProfile)
+    .get('/', getAddOrder)
+    .post('/', postAddOrder)
 ;
-
-router.get('/json-test', (req, res) => {
-    res.json({"pokemon": "Bulbasaur", "type": "Grass"})
-})
 
 // Export the router
 module.exports = router

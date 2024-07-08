@@ -1,0 +1,25 @@
+<head>
+    <title>MyShop - Add Order</title>
+    <%- include('../shared/head') %>
+</head>
+<body class="container">
+    <div>
+        <h1>Reciept</h1>
+
+        <p><a href="/" class="link-primary">New Order</a></p>
+
+        <p>Thank you for your order!</p>
+
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td>Customer Name</td>
+                    <td><%= name %></td>
+                </tr>
+            </tbody>            
+        </table>
+
+        <%- include('../shared/footer') %>
+    </div>
+    <%- include('../shared/scripts') %>
+</body>

@@ -2,12 +2,15 @@
 const express = require('express');
 
 const appRouter = require("./routes/appRouter");
+
 // Create an app
 const app = express();
-const port = 4040;
+const port = 5500;
 
-// Setup view engine
-app.set("view engine", "ejs");
+// Setup static folder, body parser, view engine
+app.use(express.static("public")); // Public folder
+app.use(express.urlencoded({extended:false})); // Form
+app.set("view engine", "ejs"); //EJS
 
 // Define routes
 app.use('/', appRouter)

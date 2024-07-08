@@ -1,0 +1,23 @@
+<head>
+    <title>MyShop - Add Order</title>
+    <%- include('../shared/head') %>
+</head>
+<body class="container">
+    <div>
+        <h1>MyShop</h1>
+
+        <form method="post" action="/">
+            <div class="mb-3">
+                <label class="form-label" for="">Customer Name</label>
+                <input class="form-control" type="text" name="customerName" />
+
+            </div>
+
+            <input class="btn btn-primary" type="submit" value="Order" />
+            <input class="btn btn-secondary" type="reset" value="Clear" />
+        </form>
+
+        <%- include('../shared/footer') %>
+    </div>
+    <%- include('../shared/scripts') %>
+</body>
