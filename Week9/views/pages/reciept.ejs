@@ -14,9 +14,57 @@
             <tbody>
                 <tr>
                     <td>Customer Name</td>
-                    <td><%= name %></td>
+                    <td><%= customerName %></td>
+                </tr>
+                <tr>
+                    <td>Email Address</td>
+                    <td><%= customerEmail %></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><%= address %></td>
                 </tr>
             </tbody>            
+        </table>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Unit Price</th>
+                    <th>Quantity</th>
+                    <th>Line Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% products.forEach(product => { %>
+                    <% if (product.quantity > 0) { %>
+                        <tr>
+                            <td><%= product.name %></td>
+                            <td><%= product.price.toFixed(2) %></td>
+                            <td><%= product.quantity %></td>
+                            <td><%= product.lineTotal.toFixed(2) %></td>
+                        </tr>
+                    <% } %>
+                <% }) %>
+            </tbody>
+        </table>
+
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td>Subtotal</td>
+                    <td>$ <%= subtotal.toFixed(2) %></td>
+                </tr>
+                <tr>
+                    <td>Tax at <%= taxRate * 100 %>%</td>
+                    <td>$ <%= tax.toFixed(2) %></td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>$ <%= total.toFixed(2) %></td>
+                </tr>
+            </tbody>
         </table>
 
         <%- include('../shared/footer') %>

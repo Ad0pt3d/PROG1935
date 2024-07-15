@@ -2,15 +2,43 @@
     <title>MyShop - Add Order</title>
     <%- include('../shared/head') %>
 </head>
-<body class="container">
-    <div>
+<body>
+    <div class="container">
         <h1>MyShop</h1>
 
         <form method="post" action="/">
             <div class="mb-3">
                 <label class="form-label" for="">Customer Name</label>
-                <input class="form-control" type="text" name="customerName" />
+                <input class="form-control" type="text" name="customerName" placeholder="Name" />
+            </div>
 
+            <div class="mb-3">
+                <label class="form-label" for="">Email Address</label>
+                <input class="form-control" type="text" name="customerEmail" placeholder="email@domain.com" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="">Province</label>
+                <select class="form-select" name="province" id="">
+                    <option value="ON">Ontario</option>
+                    <option value="AB">Alberta</option>
+                    <option value="BC">British Columbia</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="">Product 1 @ $<%= productOnePrice %></label>
+                <input class="form-control" type="text" name="productOneQty" placeholder="10" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="">Product 2 @ $<%= productTwoPrice %></label>
+                <input class="form-control" type="text" name="productTwoQty" placeholder="10" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="">Product 3 @ $<%= productThreePrice %></label>
+                <input class="form-control" type="text" name="productThreeQty" placeholder="10" />
             </div>
 
             <input class="btn btn-primary" type="submit" value="Order" />
