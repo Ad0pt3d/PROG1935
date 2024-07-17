@@ -1,0 +1,23 @@
+<head>
+    <title>InClass2 - Countdown</title>
+    <script type="text/javascript">
+        function startCountdown() {
+            let count = 10
+            
+            document.write("COUNTDOWN TO BLASTOFF!")
+
+            setTimeout(() => {
+                clearInterval(timerId)
+                document.write("BLASTOFF!")
+            }, 11000)
+
+            let timerId = setInterval(() => {
+                document.write(`<p>${count}...</p>`)
+                count--;
+            }, 1000);    
+        }
+    </script>
+</head>
+<body>
+    <button onclick="startCountdown();">START COUNTDOWN</button>
+</body>
