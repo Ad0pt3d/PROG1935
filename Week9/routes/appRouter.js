@@ -1,14 +1,14 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 
 // Import validators, controllers
-const { orderValidator, } = require("../middleware/orderValidator");
+const { orderValidators, } = require("../middleware/orderValidator");
 const { getAddOrder, postAddOrder } = require("../controllers/orderController");
 
 // Define routes
 router
     .get('/', getAddOrder)
-    .post('/', postAddOrder)
+    .post('/', orderValidators, postAddOrder)
 ;
 
 // Export the router

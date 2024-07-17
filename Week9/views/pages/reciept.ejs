@@ -52,18 +52,20 @@
 
         <table class="table table-bordered">
             <tbody>
-                <tr>
-                    <td>Subtotal</td>
-                    <td>$ <%= subtotal.toFixed(2) %></td>
-                </tr>
-                <tr>
-                    <td>Tax at <%= taxRate * 100 %>%</td>
-                    <td>$ <%= tax.toFixed(2) %></td>
-                </tr>
-                <tr>
-                    <td>Total</td>
-                    <td>$ <%= total.toFixed(2) %></td>
-                </tr>
+                <% if (subtotal <= 0) { %>
+                    <tr>
+                        <td>Subtotal</td>
+                        <td>$ <%= subtotal.toFixed(2) %></td>
+                    </tr>
+                    <tr>
+                        <td>Tax at <%= taxRate * 100 %>%</td>
+                        <td>$ <%= tax.toFixed(2) %></td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>$ <%= total.toFixed(2) %></td>
+                    </tr>
+                <% } %>
             </tbody>
         </table>
 
