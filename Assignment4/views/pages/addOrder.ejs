@@ -1,0 +1,100 @@
+<head>
+    <title>MyShop - Add Order</title>
+    <%- include('../shared/head') %>
+</head>
+<body>
+    <div class="container">
+        <h1>MyShop</h1>
+
+        <% if (typeof errors !== "undefined") { %>
+            <% errors.forEach(error => { %>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <span><%= error.msg %></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <% }) %>
+        <% } %>
+
+        <form method="post" action="/">
+            <div class="mb-3">
+                <label class="form-label">Customer Name*</label>
+                <input class="form-control" type="text" name="customerName" placeholder="Name" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Email Address*</label>
+                <input class="form-control" type="text" name="customerEmail" placeholder="email@domain.com" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Phone Number*</label>
+                <input class="form-control" type="text" name="customerPhone" placeholder="123-123-1234" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Address*</label>
+                <input class="form-control" type="text" name="customerAddress" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">City*</label>
+                <input class="form-control" type="text" name="customerCity" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Postal Code*</label>
+                <input class="form-control" type="text" name="customerPostalCode" placeholder="A1A 1A1"/>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="">Province</label>
+                <select class="form-select" name="customerProvince" id="">
+                    <option value="ON">Ontario</option>
+                    <option value="AB">Alberta</option>
+                    <option value="BC">British Columbia</option>
+                    <option value="QC">Quebec</option>
+                    <option value="NS">Nova Scotia</option>
+                    <option value="NB">New Brunswick</option>
+                    <option value="NL">Newfoundland and Labrador</option>
+                    <option value="PE">Prince Edward Island</option>
+                    <option value="MB">Manitoba</option>
+                    <option value="SK">Saskatchewan</option>
+                    <option value="YT">Yukon Territory</option>
+                    <option value="NT">Northwest Territories</option>
+                    <option value="NV">Nunavut</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Product 1 @ $<%= productOnePrice %></label>
+                <input class="form-control" type="text" name="productOneQty" placeholder="10" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Product 2 @ $<%= productTwoPrice %></label>
+                <input class="form-control" type="text" name="productTwoQty" placeholder="10" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Product 3 @ $<%= productThreePrice %></label>
+                <input class="form-control" type="text" name="productThreeQty" placeholder="10" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Delivery Time</label>
+                <select class="form-select" name="deliveryTime">
+                    <option value="threeDays">3 Days (+$20)</option>
+                    <option value="fiveDays">5 Days (+$10)</option>
+                    <option value="sevenDays">7 Days (+$5)</option>
+                    <option value="tenDays">10 Days (+$0)</option>
+                </select>
+            </div>
+
+            <input class="btn btn-primary" type="submit" value="Order" />
+            <input class="btn btn-secondary" type="reset" value="Clear" />
+        </form>
+
+        <%- include('../shared/footer') %>
+    </div>
+    <%- include('../shared/scripts') %>
+</body>
