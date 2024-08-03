@@ -5,6 +5,12 @@ const express = require('express');
 
 const appRouter = require("./routes/appRouter");
 
+const uri = process.env.MONGODB_CONNECTION_STRING;
+mongoose.connect(uri)
+    .then(() => { console.log("Connected to database.")})
+    .catch((error) => { console.log(error.message); })
+;
+
 // Create an app
 const app = express();
 const port = 5500;

@@ -140,12 +140,12 @@ const postAddOrder = (req, res) => {
         }
 
         let newOrder = Order({
-            customerName,
-            customerEmail,
-            customerPhone,
+            name: `${customerName}`,
+            emailAddress: `${customerEmail}`,
+            phoneNumber: `${customerPhone}`,
             address: `${customerAddress}, ${customerCity}, ${customerProvince}, ${customerPostalCode}`,
-            deliveryTimeReadable,
-            products: [
+            deliveryTime: `${deliveryTimeReadable}`,
+            product: [
                 {
                     name: "Product 1",
                     price: productOnePrice,
