@@ -1,0 +1,12 @@
+<form method="post" action="/">
+    <input name="fullName" placeholder="Full Name" />
+    <input name="emailAddress" placeholder="Email Address" />
+    <input type="submit" value="Subscribe" />
+</form>
+
+
+<% if (typeof errors !== "undefined") { %>
+    <% errors.forEach(error => { %>
+        <p><%= error.msg %></p>
+    <% }) %>
+<% } %>

@@ -1,0 +1,45 @@
+<head>
+    <title>InClass4 - Newsletter</title>
+    <%- include('../shared/head') %>
+    <link rel="stylesheet" href="css/newsletter.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center text-decoration-underline fw-bold">Overwatch 2 Newsletter</h1>
+    
+        <p class="text-center">Did you hear that the overwatch team are testing the idea of reverting back to 6v6. 
+            If you missed it subscribe to my newsletter to get up to date with all things
+            overwatch.
+        </p>
+        
+        <img class="mb-3 rounded" src="images/ow2-background.avif" width="1296" alt="Photo of a group of Overwatch 2 heroes">
+
+        <% if (typeof errors !== "undefined") { %>
+            <% errors.forEach(error => { %>
+                <div class="alert alert-warning alert-dismissable fade show" role="alert">
+                    <span><%= error.msg %></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <% }) %>
+        <% } %>
+
+        <form class="mb-3" method="post" action="/">
+            <div class="form-floating mb-3">
+                <input class="form-control" type="text" name="fullName" id="floatingInput" placeholder="Alice Smith">
+                <label class="floating-label" for="floatingInput">Full Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" type="text" name="emailAddress" id="floatingInput" placeholder="alice.smith@email.com">
+                <label class="floating-label" for="floatingInput">Email Address</label>
+            </div>
+            <div>
+                <input class="btn btn-primary" type="submit" value="Subscribe">
+            </div>
+        </form>
+        <%- include('../shared/footer') %>
+    </div>
+    <%- include('../shared/scripts') %>
+</body>
+
+
+

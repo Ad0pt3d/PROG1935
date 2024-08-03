@@ -1,4 +1,5 @@
 const { validationResult } = require('express-validator');
+const { Order } = require('../models/orderModel');
 
 const productOnePrice = 10;
 const productTwoPrice = 40;
@@ -78,13 +79,65 @@ const postAddOrder = (req, res) => {
             total,
         }
 
+        let newOrder = new Order({
+            customerName,
+            customerEmail,
+            address: `${province}`,
+            products: [
+                {
+                    name: "Product 1",
+                    price: productOnePrice,
+                    quantity: productOneQty,
+                    lineTotal: productOneLineTotal,
+                },
+                {
+                    name: "Product 2",
+                    price: productTwoPrice,
+                    quantity: productTwoQty,
+                    lineTotal: productTwoLineTotal,
+                },
+                {
+                    name: "Product 3",
+                    price: productThreePrice,
+                    quantity: productThreeQty,
+                    lineTotal: productThreeLineTotal,
+                },
+            ],
+            subtotal,
+            taxRate,
+            tax,
+            total
+        });
+        
+        newOrder.save()
+            .then(() => { console.log(`${customerName}'s Order Saved!`); })
+            .catch((error) => { console.log(error.message); })
+
         res.render("pages/reciept", data);
     }
 
 
 };
 
+const getAllOrders = async (req, res) => {
+    let orders = await Order.find({}).exec();
+    res.render("pages/orders", { orders });
+};
+
+const getOneOrder = async (req, res) => {
+    let order = await Order.findById(req.params.orderId).exec();
+    res.render("pages/reciept", order);
+};
+
+const getDeleteOneOrder = async (req, res) => {
+    await Order.findByIdAndDelete(req.params.orderId).exec();
+    res.redirect("/orders");
+}
+
 module.exports = {
     getAddOrder,
-    postAddOrder
+    postAddOrder,
+    getAllOrders,
+    getOneOrder,
+    getDeleteOneOrder,
 };
