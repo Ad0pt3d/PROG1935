@@ -1,0 +1,56 @@
+<head>
+    <title>Form &middot; Final Exam</title>
+    <%- include("../shared/head") %>
+</head>
+<body>
+    <div class="container">
+        <h1>Form</h1>
+
+        <p><a class="link-primary" href="/login">Login</a></p>
+        <p><a class="link-primary" href="/logout">Logout</a></p>
+        <p><a class="link-primary" href="/all">View All</a></p>
+
+        <% if (typeof errors !== "undefined") { %>
+            <% errors.forEach(error => { %>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <span><%= error.msg %></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <% }) %>
+        <% } %>
+
+        <!-- TODO: Create a form -->
+        <form method="post" action="/">
+            <div class="mb-3">
+                <label class="form-label">Customer Name*</label>
+                <input class="form-control" type="text" name="customerName" placeholder="Alice Smith" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Phone Number*</label>
+                <input class="form-control" type="text" name="phoneNumber" placeholder="123-456-7890" />
+            </div>
+
+            <div class="mb-3">
+                <label>Mango Juices</label>
+                <input class="form-control" type="text" name="mangoJuiceQuantity" />
+            </div>
+
+            <div class="mb-3">
+                <label>Berry Juices</label>
+                <input class="form-control" type="text" name="berryJuiceQuantity" />
+            </div>
+
+            <div class="mb-3">
+                <label>Apple Juices</label>
+                <input class="form-control" type="text" name="appleJuiceQuantity" />
+            </div>
+
+            <div>
+                <input class="btn btn-success" type="submit" value="Submit">
+            </div>
+        </form>
+        <%- include("../shared/footer") %>
+    </div>
+    <%- include("../shared/scripts") %>
+</body>

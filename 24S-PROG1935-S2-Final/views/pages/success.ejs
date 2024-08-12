@@ -1,0 +1,57 @@
+<head>
+    <title>Success &middot; Final Exam</title>
+    <%- include("../shared/head") %>
+</head>
+<body>
+    <div class="container">
+        <h1>Success</h1>
+
+        <p><a class="link-primary" href="/">New</a></p>
+        <p><a class="link-primary" href="/logout">Logout</a></p>
+        <p><a class="link-primary" href="/all">View All</a></p>
+
+        <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td><%= customerName %></td>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- TODO: Complete the table -->
+             <tr>
+                <td>Phone Number</td>
+                <td><%= phoneNumber %></td>
+             </tr>
+             <tr>
+                <td>Number of Mango Juices</td>
+                <td><%= mangoJuiceQuantity %></td>
+             </tr>
+             <tr>
+                <td>Number of Berry Juices</td>
+                <td><%= berryJuiceQuantity %></td>
+             </tr>
+             <tr>
+                <td>Number of Apple Juices</td>
+                <td><%= appleJuiceQuantity %></td>
+             </tr>
+             <tr>
+                <td>Subtotal</td>
+                <td><%= subtotal %></td>
+             </tr>
+             <tr>
+                <td>Tax</td>
+                <td><%= tax %></td>
+             </tr>
+             <tr>
+                <td>Total</td>
+                <td><%= total %></td>
+             </tr>
+        </tbody>
+
+        </table>
+
+        <%- include("../shared/footer") %>
+    </div>
+    <%- include("../shared/scripts") %>
+</body>

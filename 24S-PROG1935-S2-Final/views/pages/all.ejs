@@ -1,0 +1,51 @@
+<head>
+    <title>View All &middot; Final Exam</title>
+    <%- include("../shared/head") %>
+</head>
+<body>
+    <div class="container">
+        <h1>View All</h1>
+
+        <p><a class="link-primary" href="/">New</a></p>
+
+        <% if (all.length === 0) { %>
+            <div class="alert alert-info" role="alert">
+                Create a new entry
+            </div> 
+        <% } else { %>
+             <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Mango Juices</th>
+                        <th>Berry Juices</th>
+                        <th>Apple Juices</th>
+                        <th>Subtotal</th>
+                        <th>Tax</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- TODO: Complete the table -->
+                     <% all.forEach(form => { %>
+                      <tr>
+                        <td><%= form.customerName %></td>
+                        <td><%= form.phoneNumber %></td>
+                        <td><%= form.mangoJuiceQuantity %></td>
+                        <td><%= form.berryJuiceQuantity %></td>
+                        <td><%= form.appleJuiceQuantity %></td>
+                        <td><%= form.subtotal %></td>
+                        <td><%= form.tax %></td>
+                        <td><%= form.total %></td>
+                      </tr>
+                     <% }) %>
+                </tbody>
+
+             </table>
+        <% } %>
+
+        <%- include("../shared/footer") %>
+    </div>
+    <%- include("../shared/scripts") %>
+</body>
